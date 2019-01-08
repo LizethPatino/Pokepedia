@@ -1,16 +1,13 @@
 import React from 'react';
 import Title from './Title/Title';
 //import Search from './Search/Search';
+import PokeCardList from './PokeCardList/PokeCardList';
 
 const PokeContainer = () =>{
     return(
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <Title/>  
-                     
-                </div>             
-            </div>
+        <div>
+             <Title/>  
+            <PokeCardList/>                           
         </div>
         
     );

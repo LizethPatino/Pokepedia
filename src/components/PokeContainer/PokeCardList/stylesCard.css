@@ -1,5 +1,8 @@
 .card{
-    max-width: 12rem;
+    width: 12rem;
+    margin-top:4em;
+    margin-left: 2em;
+
     -webkit-box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
@@ -10,3 +13,11 @@
     background-color: #FF5A49!important;
     font-weight: 600;
 }
+
+.container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+

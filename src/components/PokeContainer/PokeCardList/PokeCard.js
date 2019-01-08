@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './stylesCard.css';
 
 
-const PokeCard = ({nombrePokemon, fotoPokemon}) =>{
+const PokeCard = ({nombrePokemon, imgPokemon}) =>{
    return( 
-    <div className="card border-light mb-3">
+    <div className="card border-light">
     <div className="card-body">
-        <img src={fotoPokemon}/>  
+       <img src={imgPokemon} alt={nombrePokemon}/>
     </div>
     <div className="card-header text-capitalize">{nombrePokemon}</div>
     </div>    

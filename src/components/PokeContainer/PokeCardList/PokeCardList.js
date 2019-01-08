@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { URL_API } from './../../../Constants/Url_api';
-import PokeCard from './PokeCard';
+import './stylesCard.css';
+import TransformPokeDates from '../../../Services/TransformPokeDates';
 
 class PokeCardList extends Component {
 
-
+    
 constructor(){
     super();
     this.state ={
-        nombre: null,
-        data: null,
-        idPokemon:150,
+        pokemones: [],
     };
 }
 
@@ -20,31 +19,27 @@ componentDidMount = () => {
 
 
     handleUpdateClick = () => {
-        const {idPokemon} =this.state;
-        const API = `${URL_API}/${idPokemon}/`; 
-         fetch( API ).then(resolve =>{
+         fetch( URL_API ).then(resolve =>{
              return resolve.json();
          }).then(data =>{
-           // const datosPokemonProcesados = transformPokeDates(data); 
-            //const tipoPokemon = data.types[1].type.name;
-            //const tipoPokemon = data.types.length;
-            const datoNombrePokemon = data.name;
-            const fotoPokemon = data.sprites.front_default; 
-           console.log(datoNombrePokemon);
-           this.setState({
-                 nombre: datoNombrePokemon,
-                 data: fotoPokemon,
-             });  
+        
+            this.setState({
+                pokemones : data.results,
+              });
+          
          });
          
      }
      
 
   render(){
-        const {nombre , data} =this.state;
+        var {pokemones} =this.state;
+        pokemones = pokemones.slice(0, 10);
         return(
-            <div>
-                <PokeCard nombrePokemon={nombre} fotoPokemon={data}/>
+            <div className="container">
+                <div className="row">
+                {pokemones.map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name} id={index+1} urlPokemon={pokemon.url}/>)}    
+                 </div>
             </div>
            
         );
