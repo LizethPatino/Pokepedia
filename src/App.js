@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar/NavBar';
 import './App.css';
-import Search from './components/NavBar/Search';
-
+import PokeContainer from './components/PokeContainer/PokeContainer';
+import NavBar from './components/NavBar/NavBar';
+import PokeCardList from './components/PokeContainer/PokeCardList/PokeCardList';
 
 class App extends Component {
   constructor(){
@@ -18,9 +18,8 @@ class App extends Component {
     return (
       <div className="App">
           <NavBar/>
-          <Search/>
-          
-       
+          <PokeContainer/>
+          <PokeCardList/>
       </div>
     );
   }

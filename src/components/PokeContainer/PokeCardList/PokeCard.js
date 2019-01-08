@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './stylesCard.css';
 
+
 const PokeCard = ({nombrePokemon, fotoPokemon}) =>{
-   return( <div className="card">
-    <img src={fotoPokemon} className="card-img-center" alt="..."/>
+   return( 
+    <div className="card border-light mb-3">
     <div className="card-body">
-        <h5 className="card-title">{nombrePokemon}</h5>
+        <img src={fotoPokemon}/>  
     </div>
-</div>);
+    <div className="card-header text-capitalize">{nombrePokemon}</div>
+    </div>    
+   );
 }
 
 export default PokeCard;
+

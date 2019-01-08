@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
-
-
+import React from 'react';
+import './NavBar.css';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 const NavBar = () => {
-
-   return (
-  <nav className="navbar navbar-dark bg-dark">
-    <a className="navbar-brand text-white">Pokepedia</a>
-  </nav>  
-        
+    return( 
+        <AppBar className="AppBar" position ="sticky">
+            <Toolbar>
+                <Typography variant="h6" color="inherit">    
+                    Pokepedia
+                </Typography>    
+            </Toolbar>    
+        </AppBar> 
     );
-};
+}
+ 
+
 
 export default NavBar;
+

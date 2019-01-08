@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { URL_API } from './../../Constants/Url_api';
+import { URL_API } from './../../../Constants/Url_api';
 import PokeCard from '../PokeCardList/PokeCard';
-
 
 
 class Search extends Component {
