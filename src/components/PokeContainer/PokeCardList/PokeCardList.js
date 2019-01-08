@@ -34,7 +34,7 @@ componentDidMount = () => {
 
   render(){
         var {pokemones} =this.state;
-        pokemones = pokemones.slice(0, 10);
+        pokemones = pokemones.slice(0, 5);
         return(
             <div className="container">
                 <div className="row">

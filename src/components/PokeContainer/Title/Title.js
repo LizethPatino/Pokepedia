@@ -1,10 +1,11 @@
 import React from 'react';
 import './title.css';
+import TituloImg from './../../../assets/img/tituloPoke.png';
 
 const Title = () =>{
     return(
         <div className="title">
-             <h1>Pokepedia</h1>
+                <img  src={TituloImg}/>
         </div>
     );
 }

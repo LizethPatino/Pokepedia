@@ -1,13 +1,5 @@
-@font-face {
-    font-family: "Pokemon-Solid";
-    src: url("./../../../assets/fonts/Pokemon-Solid.ttf") format('truetype');
-  }
 
 .title{
-    margin-top:25px;
+    margin-top:30px;
 }
 
-h1{
-    font-family: "Pokemon-Solid"!important;
-    font-size: 6em;
-}  
