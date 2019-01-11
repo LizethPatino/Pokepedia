@@ -3,6 +3,7 @@ import { URL_API } from './../../../Constants/Url_api';
 import './stylesCard.css';
 import TransformPokeDates from '../../../Services/TransformPokeDates';
 
+
 class PokeCardList extends Component {
 
     
@@ -26,7 +27,6 @@ componentDidMount = () => {
             this.setState({
                 pokemones : data.results,
               });
-          
          });
          
      }
@@ -38,7 +38,8 @@ componentDidMount = () => {
         return(
             <div className="container">
                 <div className="row">
-                {pokemones.map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name} id={index+1} urlPokemon={pokemon.url}/>)}    
+                {pokemones.map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name} id={index+1}/>
+                )}  
                  </div>
             </div>
            

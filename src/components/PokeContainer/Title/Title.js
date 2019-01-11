@@ -5,7 +5,7 @@ import TituloImg from './../../../assets/img/tituloPoke.png';
 const Title = () =>{
     return(
         <div className="title">
-                <img  src={TituloImg}/>
+                <img  src={TituloImg} alt="Pokepedia"/>
         </div>
     );
 }

@@ -5,38 +5,30 @@ import PokeCard from '../components/PokeContainer/PokeCardList/PokeCard';
 class TransformPokeDates extends Component{
     constructor(props){
         super(props);
-        const {nombrePokemon,urlPokemon}=props;
+        const {nombrePokemon, id}=props;
         this.state ={
             nombre: nombrePokemon,
-            urlPokemon,
-            imgPokemon:[],
+            nombreQuemadoPokemon:'Charmander',
+            idPokemon: id,
         };
     }
 
 
     componentDidMount = () => {
         this.getImagePokemon();
+
    }
    
     getImagePokemon = () =>{
-        const { urlPokemon } = this.state;
-        fetch( urlPokemon ).then(resolve =>{
-            return resolve.json();
-        }).then(data =>{
-       
-          const imgPokemon = data.sprites.front_default;
-          this.setState({
-            imgPokemon,
-          });
-        
-        });   
-    }
+       const { idPokemon }=this.state; 
+       const urlImagen = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idPokemon}.png`;
+       return urlImagen;
+     }
 
 render(){
-    const {imgPokemon,nombre}= this.state;
+    const {nombre}= this.state;
     return(
-        
-      <PokeCard nombrePokemon={nombre} imgPokemon={imgPokemon}/>
+        <PokeCard nombrePokemon={nombre} imgPokemon={this.getImagePokemon()}/>
         );
     }
 }

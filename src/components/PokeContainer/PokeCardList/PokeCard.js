@@ -3,6 +3,8 @@ import './stylesCard.css';
 
 
 const PokeCard = ({nombrePokemon, imgPokemon}) =>{
+
+
    return( 
     <div className="card border-light">
     <div className="card-body">

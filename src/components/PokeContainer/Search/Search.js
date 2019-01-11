@@ -1,52 +1,47 @@
 import React, { Component } from 'react';
-import { URL_API } from './../../../Constants/Url_api';
-import PokeCard from '../PokeCardList/PokeCard';
+//import TransformPokeDates from './../../../Services/TransformPokeDates';
+import './Search.css';
+//import GetPokemonByName from './../../../Services/GetPokemonByName';
 
 
 class Search extends Component {
 
 constructor(){
     super();
-    this.state ={
-        nombre: null,
-        data: null,
+   
+    this.state = {
+        nombrePokemonInput : '',
     };
 }
 
 
-    handleUpdateClick = (event) => {
-        event.preventDefault();
-         fetch( URL_API ).then(resolve =>{
-             return resolve.json();
-         }).then(data =>{
-           // const datosPokemonProcesados = transformPokeDates(data); 
-            //const tipoPokemon = data.types[1].type.name;
-            //const tipoPokemon = data.types.length;
-            const datoNombrePokemon = data.name;
-            const fotoPokemon = data.sprites.front_default; 
-           console.log(datoNombrePokemon);
-           this.setState({
-                 nombre: datoNombrePokemon,
-                 data: fotoPokemon,
-             });  
-         });
-         
-     }
-     
+getPokemonName = (infoInput) => {
+    infoInput.preventDefault(); 
+    this.setState({nombrePokemonInput: infoInput.target.value});
+}
+
+getCardPokemon = () => {
+    const {nombrePokemonInput} =this.state;
+    console.log("el pokemon que tengo que buscar es:", nombrePokemonInput );
+    this.setState={
+        nombrePokemonInput,
+    };
+    //if( nombrePokemon !== '' && )
+ }
 
   render(){
-        const {nombre , data} =this.state;
         return(
-            <div>
-            <form className="form-inline">
-                <input className="form-control mr-sm-2" type="search" placeholder="Buscar Pokemon" aria-label="Search"/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.handleUpdateClick}>Buscar</button>                
-           </form>
-            <p> el nombre es: {nombre} </p>
-            <img src={data}/>
-            <PokeCard nombrePokemon={nombre} fotoPokemon={data}/>
-           </div>
-           
+        <div className="row">
+
+            <div className="col"></div>
+                <div className="input-group mt-4 mb-3 col-sm-6">
+                    <input type="text" onChange={this.getPokemonName} className="form-control" placeholder="Ingresa el nombre del Pokémon" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                        <div className="input-group-append">
+                            <button className="btn btn-outline-secondary" type="button" onClick={this.getCardPokemon} id="button-addon2">Buscar</button>
+                         </div>
+                </div>
+            <div className="col"></div>
+        </div> 
         );
     }
 }
