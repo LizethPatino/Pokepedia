@@ -11,7 +11,7 @@ constructor(){
     super();
     this.state ={
         pokemones: [],
-        pokemonQuemado: 'mew',
+        pokemonQuemado: 'raichu',
     };
 }
 
@@ -40,7 +40,7 @@ componentDidMount = () => {
         return(
             <div className="container">
                 <div className="row">
-                {pokemones.filter(eleccion => eleccion.name ===pokemonQuemado).map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name}/>
+        {pokemonQuemado!== '' ? pokemones.filter(eleccion => eleccion.name ===pokemonQuemado).map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name}/> ) : pokemones.map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name}/>
                 )}  
                  </div>
             </div>
