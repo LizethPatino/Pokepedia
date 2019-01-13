@@ -11,7 +11,7 @@ constructor(){
     super();
     this.state ={
         pokemones: [],
-        pokemonQuemado: 'pikachu',
+        pokemonQuemado: 'mew',
     };
 }
 
