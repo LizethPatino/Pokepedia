@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PokeCard from '../components/PokeContainer/PokeCardList/PokeCard';
+import { URLID } from './../Constants/Url_api';
 
 
 class TransformPokeDates extends Component{
@@ -9,26 +10,32 @@ class TransformPokeDates extends Component{
         this.state ={
             nombre: nombrePokemon,
             nombreQuemadoPokemon:'Charmander',
-            idPokemon: id,
+            idPokemon: null,
         };
     }
 
 
     componentDidMount = () => {
-        this.getImagePokemon();
+        this.getIdPokemon();
 
    }
-   
-    getImagePokemon = () =>{
-       const { idPokemon }=this.state; 
-       const urlImagen = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idPokemon}.png`;
-       return urlImagen;
-     }
 
+   getIdPokemon( ){
+    const {nombre} =this.state;
+    const urlId= `${URLID}/${nombre}/`;
+    fetch( urlId ).then(resolve =>{
+        return resolve.json();
+    }).then(datoPokemon =>{
+       this.setState({
+           idPokemon : datoPokemon.id,
+         });   
+    });
+}
+   
 render(){
-    const {nombre}= this.state;
+    const {nombre, idPokemon}= this.state;
     return(
-        <PokeCard nombrePokemon={nombre} imgPokemon={this.getImagePokemon()}/>
+        <PokeCard nombrePokemon={nombre} idPokemon={idPokemon}/>
         );
     }
 }
