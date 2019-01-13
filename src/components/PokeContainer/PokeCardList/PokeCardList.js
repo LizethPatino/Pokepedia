@@ -9,9 +9,11 @@ class PokeCardList extends Component {
     
 constructor(){
     super();
+    //const {nombrePokemonInput} =props;
     this.state ={
         pokemones: [],
-        pokemonQuemado: 'raichu',
+        //pokemonQuemado: 'raichu',
+        nombrePokemonInput: '',
     };
 }
 
@@ -31,16 +33,24 @@ componentDidMount = () => {
          });
          
      }
+
+     getPokemonName = (infoInput) => {
+        this.setState({nombrePokemonInput: infoInput.target.value});        
+    }
+    
      
 
   render(){
-        var {pokemones, pokemonQuemado} =this.state;
+        var {pokemones, nombrePokemonInput} =this.state;
         pokemones = pokemones.slice(0, 151);
-        //console.log();
+        const filteredPokemon = pokemones.filter(pokemon => {
+            return pokemon.name.indexOf(nombrePokemonInput) !== -1;
+          });
         return(
             <div className="container">
-                <div className="row">
-        {pokemonQuemado!== '' ? pokemones.filter(eleccion => eleccion.name ===pokemonQuemado).map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name}/> ) : pokemones.map((pokemon,index,url)=><TransformPokeDates key={index} nombrePokemon={pokemon.name}/>
+                <div className="row"><input type="text" onChange={this.getPokemonName} className="form-control" placeholder="Ingresa el nombre del Pokémon"/>
+                
+        {filteredPokemon.map((pokemon)=><TransformPokeDates key={pokemon.name} nombrePokemon={pokemon.name}/>
                 )}  
                  </div>
             </div>

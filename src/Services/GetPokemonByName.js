@@ -3,6 +3,7 @@ import PokeCardList from '../components/PokeContainer/PokeCardList/PokeCardList'
 
 const GetPokemonByName = ({nombrePokemonInput}) => {
 return(
+   
     <PokeCardList nombrePokemonInput = {nombrePokemonInput} />
 );
  

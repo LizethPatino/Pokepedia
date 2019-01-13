@@ -8,7 +8,7 @@ const PokeContainer = () =>{
     return(
         <div>
              <Title/> 
-             <Search/> 
+          
             <PokeCardList/>                          
         </div>
         
