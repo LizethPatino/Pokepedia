@@ -9,10 +9,8 @@ class PokeCardList extends Component {
     
 constructor(){
     super();
-    //const {nombrePokemonInput} =props;
     this.state ={
         pokemones: [],
-        //pokemonQuemado: 'raichu',
         nombrePokemonInput: '',
     };
 }
@@ -47,14 +45,19 @@ componentDidMount = () => {
             return pokemon.name.indexOf(nombrePokemonInput) !== -1;
           });
         return(
-            <div className="container">
-                <div className="row"><input type="text" onChange={this.getPokemonName} className="form-control" placeholder="Ingresa el nombre del Pokémon"/>
-                
-        {filteredPokemon.map((pokemon)=><TransformPokeDates key={pokemon.name} nombrePokemon={pokemon.name}/>
-                )}  
-                 </div>
+        <div>
+            <div className="container form-group has-search inputPokemon">
+                <span className="fa fa-search form-control-feedback"></span>
+                <input type="text" onChange={this.getPokemonName}className="form-control" placeholder="Ingresa el nombre del Pokémon"/> 
+        
             </div>
-           
+                 <div className="container padre">
+                     <div className="row">
+                             {filteredPokemon.map((pokemon)=><TransformPokeDates key={pokemon.name} nombrePokemon={pokemon.name}/>
+                )}  
+                     </div>
+                 </div>
+        </div>     
         );
     }
 }
