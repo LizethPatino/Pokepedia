@@ -6,10 +6,9 @@ import { URLID } from './../Constants/Url_api';
 class TransformPokeDates extends Component{
     constructor(props){
         super(props);
-        const {nombrePokemon, id}=props;
+        const {nombrePokemon}=props;
         this.state ={
             nombre: nombrePokemon,
-            nombreQuemadoPokemon:'Charmander',
             idPokemon: null,
         };
     }

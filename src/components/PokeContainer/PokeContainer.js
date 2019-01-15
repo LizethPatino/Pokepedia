@@ -6,8 +6,8 @@ import PokeCardList from './PokeCardList/PokeCardList';
 const PokeContainer = () =>{
     return(
         <div>
-             <Title/> 
-            <PokeCardList/>                          
+            <Title/> 
+            <PokeCardList/>                        
         </div>
         
     );
