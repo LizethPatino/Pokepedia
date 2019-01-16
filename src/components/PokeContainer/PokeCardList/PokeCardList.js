@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { URL_API } from './../../../Constants/Url_api';
 import './stylesCard.css';
-import TransformPokeDates from './../../../Services/TransformPokeDates';
+import TransformPokeDates from '../../../Services/TransformPokeDates';
 
 
 class PokeCardList extends Component {
@@ -17,6 +17,7 @@ constructor(){
 
 componentDidMount = () => {
      this.handleUpdateClick();
+    
 }
 
 
@@ -39,8 +40,8 @@ componentDidMount = () => {
      
 
   render(){
-        var {pokemones, nombrePokemonInput} =this.state;
-        pokemones = pokemones.slice(0, 151);
+        var {pokemones, nombrePokemonInput } =this.state;
+        pokemones = pokemones.slice(0, 20);
         const filteredPokemon = pokemones.filter(pokemon => {
             return pokemon.name.indexOf(nombrePokemonInput) !== -1;
           });
@@ -55,7 +56,7 @@ componentDidMount = () => {
                      <div className="row">
                              {filteredPokemon.map((pokemon)=><TransformPokeDates key={pokemon.name} nombrePokemon={pokemon.name}/>
                 )}  
-                     </div>
+                     </div> 
                  </div>
         </div>     
         );

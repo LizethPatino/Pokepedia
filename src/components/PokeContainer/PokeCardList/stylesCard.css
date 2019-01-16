@@ -44,3 +44,7 @@
     pointer-events: none;
     color: #FF5A49;
 }
+
+a:hover{
+    text-decoration: none!important;
+}

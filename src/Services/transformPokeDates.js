@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PokeCard from '../components/PokeContainer/PokeCardList/PokeCard';
-import { URLID } from './../Constants/Url_api';
+import { URLID } from '../Constants/Url_api';
+
 
 
 class TransformPokeDates extends Component{
@@ -10,12 +11,14 @@ class TransformPokeDates extends Component{
         this.state ={
             nombre: nombrePokemon,
             idPokemon: null,
+            loading: true,
         };
     }
 
 
     componentDidMount = () => {
         this.getIdPokemon();
+        setTimeout(() => this.setState({ loading: false }), 3000);
 
    }
 
@@ -32,9 +35,9 @@ class TransformPokeDates extends Component{
 }
    
 render(){
-    const {nombre, idPokemon}= this.state;
+    const {nombre, idPokemon,loading}= this.state;
     return(
-        <PokeCard nombrePokemon={nombre} idPokemon={idPokemon}/>
+       <PokeCard nombrePokemon={nombre} idPokemon={idPokemon} loading={loading}/>
         );
     }
 }
