@@ -3,7 +3,7 @@ import './App.css';
 import PokeContainer from './components/PokeContainer/PokeContainer';
 import NavBar from './components/NavBar/NavBar';
 import { Route, Switch } from 'react-router-dom';
-import About from './components/About';
+import SpecificPokemon from './components/PokeContainer/PokeCardList/SpecificPokemon';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
           <NavBar/>
           <Switch>
             <Route exact path='/' component={ PokeContainer } />
-            <Route path='/about' component={ About } />
+            <Route path='/:id' component={ SpecificPokemon } />
           </Switch>    
       </div>
     );
