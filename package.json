@@ -2,7 +2,7 @@
   "name": "pokepedia",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lizethpatino.github.io/Pokepedia/#/",
+  "homepage": "https://lizethpatino.github.io/Pokepedia",
   "dependencies": {
     "@material-ui/core": "^3.8.1",
     "bootstrap": "^4.2.1",
