@@ -8,6 +8,18 @@
     box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
 }
 
+@media (min-width: 324px)and (max-width: 767px) { 
+    .card{
+        position: relative;
+        left: 3.2em;
+    }    
+  }
+
+.tarjeta{
+    -webkit-box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75);
+}
 .card:hover{
     -webkit-transform:scale(1.2);transform:scale(1.2);
 }
@@ -47,4 +59,16 @@
 
 a:hover{
     text-decoration: none!important;
+}
+
+.btn-danger{
+    background-color: #FF5A49;
+    border-color: #FF5A49;
+}
+
+.btn-danger:hover{
+    color: #FF5A49;
+    border-color: #FF5A49;
+    background-color: #fff;
+    
 }

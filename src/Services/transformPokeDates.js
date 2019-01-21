@@ -18,7 +18,7 @@ class TransformPokeDates extends Component{
 
     componentDidMount = () => {
         this.getIdPokemon();
-        setTimeout(() => this.setState({ loading: false }), 3000);
+        setTimeout(() => this.setState({ loading: false }), 1500);
 
    }
 

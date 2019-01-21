@@ -42,16 +42,17 @@ const {idPokemon, dataPokemon,ability,type} = this.state;
 return (
  
   <div className="mt-3">
-            <p><b>Name:</b> {dataPokemon.name}</p>
+    <div className="container">
+        <div className="card-body tarjeta">
+            <p className="text-capitalize"><b>Name:</b> {dataPokemon.name}</p>
             <img src={`${URL_IMG}/${idPokemon}.png`} alt={dataPokemon.name}/>
             <p><b>N° Pokedex: #</b> {idPokemon}</p>
             <p><b>Ability: </b> {ability} </p>
             <p><b>Type: </b> {type} </p>
             <p><b>Base Experience: </b> {dataPokemon.base_experience} </p>
             <Link to={'/'}><button className="btn btn-danger">Regresar</button></Link>
-      
-            
-            
+        </div>
+    </div>    
   </div>
 )
 };

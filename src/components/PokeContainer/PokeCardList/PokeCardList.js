@@ -41,7 +41,6 @@ componentDidMount = () => {
 
   render(){
         var {pokemones, nombrePokemonInput } =this.state;
-        pokemones = pokemones.slice(0, 151);
         const filteredPokemon = pokemones.filter(pokemon => {
             return pokemon.name.indexOf(nombrePokemonInput.toLowerCase()) !== -1;
           });
